@@ -1,0 +1,20 @@
+service: lay-fyac-externas
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+	
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    layer:
+      name: lay-fyac-externas
+      description: Layer con librerias externas
+      compatibleRuntimes:
+        - python3.8
+
+plugins:
+  - serverless-python-requirements
